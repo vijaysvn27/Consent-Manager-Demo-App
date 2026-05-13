@@ -269,9 +269,43 @@ Well within Max plan budget. "Weekly · all models" was 23% when we started; sho
 ## When you wake up
 
 1. **Open `localhost:5173`** — demo should be fully running on white theme
-2. **If ConsenTick still looks old:** Agent-C will have completed by morning. Hard-refresh (`Ctrl+Shift+R`) to force HMR sync.
+2. **Hard-refresh** (`Ctrl+Shift+R`) to force HMR sync if anything looks stale
 3. **Drive the demo end-to-end** with Vodafone India + journey type Self to see the full flow
 4. **Switch perspectives + modes** — verify all 5 perspectives render and Story/Technical modes work
 5. **Spot-check Hindi or Tamil** by clicking the globe in ConsenTick and selecting that language
 6. **Read this file's "Open Issues"** for the small things to address next
 7. **Decide** what to attack first in our joint session — fidelity polish on CT Mgr/Aurva, or P2 missing DPDP flows, or Phase 14 Story HTML
+
+---
+
+## Continuing from your office (GitHub repo pushed)
+
+**Repo:** https://github.com/vijaysvn27/Consent-Manager-Demo-App
+
+The full dpdp-demo codebase + all .md docs (NIGHT_REPORT, LIVE_CONTEXT, PLAN, CLAUDE) is pushed.
+`node_modules/`, `dist/`, and `_screenshots/` are gitignored. Total: 48 files, ~196 KiB.
+
+**To resume work from office:**
+
+```
+git clone https://github.com/vijaysvn27/Consent-Manager-Demo-App.git
+cd Consent-Manager-Demo-App
+pnpm install   # or npm install
+pnpm dev       # or npm run dev
+```
+
+Then start a fresh Claude Code session and paste this primer on the first message:
+
+> I'm continuing the Perfios DPDP demo. **Read `NIGHT_REPORT.md` and `LIVE_CONTEXT.md` in full first.** Then I'll tell you what to work on this session.
+>
+> Project context:
+> - Sonnet-only build, no AG in this loop. Don't write AG specs — give direct Sonnet prompts or edit code directly.
+> - Stack: Vite 5 + React 18 + TS strict + Tailwind. No UI libs.
+> - Design tokens: `--perfios-blue` + `--aurva-green`. Never use `company.primaryColor` for Perfios/Aurva surfaces.
+> - BLUF format. Tables > paragraphs. Quality > speed. Call me Vijay.
+>
+> Reference screenshots (Aurva, CM, Cookies, Flow, Architexture) are NOT in this repo — they live on Vijay's home machine at `G:\Downloads\CM\`. Pixel-fidelity polish on CT Manager / Aurva needs those references, so flag if a task needs them and we'll find an alternative.
+>
+> [Then tell it what you want to do this session.]
+
+That's it — that primer + the two .md files is the full handoff.
