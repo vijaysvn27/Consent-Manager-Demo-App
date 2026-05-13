@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens — Perfios DPDP demo
+ * Use these instead of `company.primaryColor` for Perfios/Aurva/ConsenTick surfaces.
+ * `company.primaryColor` may only be used as a single accent on the Data Fiduciary's
+ * own landing page (logo dot + one CTA). Everything else uses these tokens.
+ */
+:root {
+  /* Perfios products (ConsenTick, CT Manager) */
+  --perfios-blue: #1e4d8c;
+  --perfios-blue-50: #eff4fb;
+  --perfios-blue-100: #d6e3f3;
+  --perfios-blue-700: #1e4d8c;
+  --perfios-blue-800: #163b6d;
+
+  /* Aurva (separate product — green leaf brand) */
+  --aurva-green: #10b981;
+  --aurva-green-50: #ecfdf5;
+  --aurva-green-100: #d1fae5;
+  --aurva-green-700: #047857;
+  --aurva-canvas: #f8fafc;
+
+  /* ConsenTick (same as Perfios) */
+  --consentick-blue: #1e4d8c;
+
+  /* Neutral surfaces — overrides Tailwind defaults for the demo's "white" direction */
+  --surface-white: #ffffff;
+  --surface-light: #f8fafc;
+  --surface-line: #e2e8f0;
+  --text-strong: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--surface-white);
+    color: var(--text-strong);
+  }
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+}
